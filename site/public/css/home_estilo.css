@@ -1,6 +1,5 @@
 body {
     margin: 0;
-    background-color: #011F5B;
 }
 
 /*Padronização da Página*/
@@ -51,11 +50,12 @@ body {
 /*Início Estilo banner_frase1*/
 .banner_frase1 {
     width: 100%;
-    height: 820px;
+    height: 1000px;
     background-image: url('../img/fundo3.jpg');
     background-size: cover;
     display: flex;
     align-items: center;
+    border-bottom: #011F5B solid 10px;
 }
 
 .banner_frase1 .cor-backround {
@@ -79,8 +79,65 @@ body {
 }
 
 /*Final Estilo banner_frase1*/
+.formulario{
+    display: flex;
+    background-image: url('../img/fundo_form.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 100%;
+    width: 100%;
+    height: 1000px;
+    border-bottom: #011F5B solid 10px;
+}
 
-/*Início do estilo do Formulario*/
+.bloco_perguntas{
+    display: flex;
+    border: #D30C7B solid 2px;
+    margin-top: 2.5%;
+    margin-left: 3%;
+    align-items: center;
+    display: block;
+    text-align: left;
+}
+
+.titulo_pesquisa {
+    margin-left: 15px;
+    margin-top: 5%;
+    color: white;
+}
+
+.todas_inputs {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.input_separada {
+    display: flex;
+    align-items: center;
+}
+
+.perguntas {
+    font-weight: bold;
+    font-size: 33px;
+    margin-right: 10px;
+    color: white;
+}
+
+.respostas {
+    padding: 5px;
+    border: 1px solid #69D1C5;
+    background-color: transparent;
+}
+
+.opcoesSapato {
+    padding: 5px;
+    border: 1px solid #69D1C5;
+    background-color: transparent;
+    margin-left: 5px;
+}
+
+/*Início do estilo do Formulario
 .todas_inputs {
     display: flex;
     flex-direction: column;
@@ -93,6 +150,7 @@ body {
 
 .perguntas {
     font-weight: bold;
+    font-size: 33px;
     margin-right: 10px;
     color: white;
 }
