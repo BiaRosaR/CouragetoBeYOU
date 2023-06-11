@@ -1,48 +1,49 @@
-body{
+body {
     margin: 0;
+    background-color: #011F5B;
 }
 
 /*Padronização da Página*/
-.container{
+.container {
     display: flex;
     margin: auto;
     width: 95%;
 }
 
 /*Início do Header*/
-.header{
+.header {
     flex-direction: row;
     background-color: #242124;
 }
 
-.header .container{
+.header .container {
     align-items: center;
     justify-content: space-between;
 }
 
-.header .container .logotipo img{
+.header .container .logotipo img {
     width: 90px;
     height: 90px;
 }
 
-.logotipo{
+.logotipo {
     display: flex;
     align-items: center;
     width: 50%;
 }
 
-.navBar{
+.navBar {
     list-style: none;
-    width: 730px;
+    width: 750px;
     display: flex;
     justify-content: space-around;
     padding-inline-start: 25%;
 }
 
-.navBar a{
+.navBar a {
     color: white;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 22px;
 }
 
 /*Final do Header*/
@@ -76,4 +77,48 @@ body{
     text-align: center;
     font-weight: normal;
 }
+
 /*Final Estilo banner_frase1*/
+
+/*Início do estilo do Formulario*/
+.todas_inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.input_separada {
+    display: flex;
+    align-items: center;
+}
+
+.perguntas {
+    font-weight: bold;
+    margin-right: 10px;
+    color: white;
+}
+
+.respostas {
+    padding: 5px;
+    border: 1px solid #69D1C5;
+    background-color: transparent;
+}
+
+.opcoesSapato {
+    padding: 5px;
+    border: 1px solid #69D1C5;
+    background-color: transparent;
+    margin-left: 5px;
+}
+
+.titulo_pesquisa {
+    margin-left: 15px;
+    margin-top: 5%;
+    color: white;
+}
+
+.formulario_completo {
+    margin-left: 30px;
+    display: flex;
+}
+
+/*Final do estilo do Formulario*/
