@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login- CTBY</title>
-    <link rel="stylesheet" href="../css/estilo_cadastro.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <title>Cadastro- CTBY</title>
+    <link rel="stylesheet" href="../css/estilo_cadastro_login.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="icon" style="height: 100%; width: 100%;" href="../img/logo.png">
 </head>
 
@@ -20,7 +19,7 @@
                     <!--<h2 class="title title-primary">Seja Bem vindo(a) a Courage to be you!</h2>-->
                 <p class="description description-primary">Se você já possui conta cadastrada, realize direto o login. E
                     encoraje seu estilo maravilhoso como nosos serviços!</p>
-                <button id="signin" class="btn btn-primary">sign in</button>
+                <button id="signin" class="btn btn-primary"><a href="login.html"><b>Entrar</b></a></button>
             </div>
             <div class="second-column"><!-- Início da social media -->
                 <h2 class="title title-second">Crie uma conta única:</h2>
@@ -45,23 +44,23 @@
                 </div><!-- Fim social media -->
                 <p class="description description-second">Registre um email e senha, garantindo o seu acesso:</p>
                 <form class="form">
-                    <label class="label-input" for="" style="background-color: #FFC0CB;">
+                    <label class="label-input" for="" style="background-color: transparent;border: 2px solid #69D1C5;">
                         <i class="far fa-user icon-modify"></i>
                         <input type="text" placeholder="Name">
                     </label>
 
-                    <label class="label-input" for="" style="background-color: #FFC0CB;">
+                    <label class="label-input" for="" style="background-color: transparent; border: 2px solid #69D1C5">
                         <i class="far fa-envelope icon-modify"></i>
                         <input type="email" placeholder="Email">
                     </label>
 
-                    <label class="label-input" for="" style="background-color: #FFC0CB;">
+                    <label class="label-input" for="" style="background-color: transparent;border: 2px solid #69D1C5">
                         <i class="fas fa-lock icon-modify"></i>
                         <input type="password" placeholder="Password">
                     </label>
 
 
-                    <button class="btn btn-second">sign up</button>
+                    <button onclick="cadastrar()" class="btn btn-second"><b>Cadastrar</b></button>
                 </form>
             </div><!-- Final second column -->
         </div><!-- Final first conteudo -->
