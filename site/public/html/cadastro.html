@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cadastro- CTBY</title>
     <link rel="stylesheet" href="../css/estilo_cadastro_login.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="icon" style="height: 100%; width: 100%;" href="../img/logo.png">
 </head>
 
@@ -15,8 +16,8 @@
     <div class="container">
         <div class="conteudo"><!-- Início conteudo -->
             <div class="first-column">
-                    <img class="logo" src="../img/logo.png">
-                    <!--<h2 class="title title-primary">Seja Bem vindo(a) a Courage to be you!</h2>-->
+                <img class="logo" src="../img/logo.png">
+                <!--<h2 class="title title-primary">Seja Bem vindo(a) a Courage to be you!</h2>-->
                 <p class="description description-primary">Se você já possui conta cadastrada, realize direto o login. E
                     encoraje seu estilo maravilhoso como nosos serviços!</p>
                 <button id="signin" class="btn btn-primary"><a href="login.html"><b>Entrar</b></a></button>
@@ -46,22 +47,22 @@
                 <form class="form">
                     <label class="label-input" for="" style="background-color: transparent;border: 2px solid #69D1C5;">
                         <i class="far fa-user icon-modify"></i>
-                        <input type="text" placeholder="Name">
+                        <input id="nome_input" placeholder="Name">
                     </label>
 
                     <label class="label-input" for="" style="background-color: transparent; border: 2px solid #69D1C5">
                         <i class="far fa-envelope icon-modify"></i>
-                        <input type="email" placeholder="Email">
-                    </label>
-
-                    <label class="label-input" for="" style="background-color: transparent;border: 2px solid #69D1C5">
-                        <i class="fas fa-lock icon-modify"></i>
-                        <input type="password" placeholder="Password">
+                        <input id="email_input" type="email" placeholder="Email">
                     </label>
 
                     <label class="label-input" for="" style="background-color: transparent;border: 2px solid #69D1C5">
                         <i class="fas fa-venus-mars icon-modify"></i>
-                        <input placeholder="Sexo: F ou M">
+                        <input id="sexo_input" placeholder="Sexo: F ou M">
+                    </label>
+
+                    <label class="label-input" for="" style="background-color: transparent;border: 2px solid #69D1C5">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <input id="senha_input" type="password" placeholder="Password">
                     </label>
 
                     <button onclick="cadastrar()" class="btn btn-second"><b>Cadastrar</b></button>
@@ -73,5 +74,68 @@
 
 </html>
 <script>
+    function cadastrar() {
+        aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = nome_input.value;
+        var emailVar = email_input.value;
+        var sexovar = sexo_input.value;
+        var senhaVar = senha_input.value;
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || sexoVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "PREENCHA todos os CAMPOS para efetuar o cadastro!";
+
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
 
 </script>
