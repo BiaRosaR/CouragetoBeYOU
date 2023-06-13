@@ -88,7 +88,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    height: 1100px;
+    height: 1500px;
     border-bottom: #011F5B solid 10px;
     align-items: center;
 }
@@ -102,7 +102,7 @@ body {
 }
 
 .texto2{
-    padding: 4% 8%;
+    padding: 8% 8%;
 }
 
 .titulo_pesquisa {
@@ -134,7 +134,7 @@ body {
     background-color: transparent;
 }
 
-.opcoesSapato {
+.opcoes {
     padding: 5px;
     border: 1px solid #69D1C5;
     background-color: transparent;

@@ -78,12 +78,16 @@
                             id="ipt_qtdPecaAzul">
                     </div>
                     <div class="input_separada">
-                        <h2 class="perguntas">Utiliza peça xadrez?</h2> <input class="respostas" id="ipt_PecaXadrez">
+                        <h2 class="perguntas">Utiliza peça xadrez?</h2>
+                        <select class="Opcoes" id="ipt_PecaXadrez">
+                            <option value="sim">Sim</option>
+                            <option value="nao">Não</option>
+                        </select>
                     </div>
                     <div class="input_separada">
                         <h2 style="color: white; font-size: 40px; text-align: left;">Você prefere Tênis a qualquer outro
                             sapato?</h2>
-                        <select class="opcoesSapato" id="sapato">
+                        <select class="opcoes" id="sel_sapato">
                             <option selected disobled value="">Selecione</option>
                             <option value="1">Tênis</option>
                             <option value="2">Sapatilha</option>
@@ -93,7 +97,7 @@
                         </select>
                     </div>
                 </div>
-                <button class="enviar_dashboard" onclick="enviar_resposta()">responder</button>
+                <button class="enviar_dashboard" onclick="registrarPesquisa()">responder</button>
             </div>
         </div>
     </div>
@@ -105,5 +109,52 @@
 
 </html>
 <script>
+    function registrarPesquisa() {
+        var qtd_PAzul = Number(ipt_qtdPecaAzul.value);
+        var qtd_PBranca = Number(ipt_qtdPecaBranca.value);
+        var qtd_PPreta = Number(ipt_qtdPecaPreta.value);
+        var xadrez = ipt_PecaXadrez.value;
+        var sapato = sel_sapato.value;
 
+        if (qtd_PAzul == "" || qtd_PBranca  == "" || qtd_PPreta == "" || xadrez == "" || sapato == "") {
+            alert("PREENCHA todos os CAMPOS para responder a pesquisa!");
+
+            // finalizarAguardar();
+            return false;
+        }
+
+        fetch("/usuarios/registrarPesquisa", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                QTDpecaAzul: qtd_PAzul,
+                QTDpecaBranca:  qtd_PBranca,
+                QTDpecaPreta: qtd_PPreta,
+                xadrez: xadrez,
+                sapato: sapato
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                alert("Muito obrigada por responder!");
+
+
+                limparFormulario();
+                // finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro das respostas!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
+        return false;
+    }
 </script>
