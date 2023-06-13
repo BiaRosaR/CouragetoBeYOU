@@ -6,21 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cadastro- CTBY</title>
-    <link rel="stylesheet" href="../css/estilo_cadastro_login.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <link rel="icon" style="height: 100%; width: 100%;" href="../img/logo.png">
+    <link rel="stylesheet" href="css/estilo_cadastro_login.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="icon" style="height: 100%; width: 100%;" href="img/logo.png">
 </head>
 
 <body>
     <div class="container">
         <div class="conteudo"><!-- Início conteudo -->
             <div class="first-column">
-                <img class="logo" src="../img/logo.png">
+                <img class="logo" src="img/logo.png">
                 <!--<h2 class="title title-primary">Seja Bem vindo(a) a Courage to be you!</h2>-->
                 <p class="description description-primary">Se você já possui conta cadastrada, realize direto o login. E
                     encoraje seu estilo maravilhoso como nosos serviços!</p>
-                <button id="signin" class="btn btn-primary"><a href="login.html"><b>Entrar</b></a></button>
+                <button id="signin" class="btn btn-primary"><a href="../public/login.html"><b>Entrar</b></a></button>
             </div>
             <div class="second-column"><!-- Início da social media -->
                 <h2 class="title title-second">Crie uma conta única:</h2>
@@ -79,9 +78,10 @@
 
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
+        var verificacao = true;
         var nomeVar = nome_input.value;
         var emailVar = email_input.value;
-        var sexovar = sexo_input.value;
+        var sexoVar = sexo_input.value;
         var senhaVar = senha_input.value;
 
         if (nomeVar == "" || emailVar == "" || senhaVar == "" || sexoVar == "") {
@@ -106,7 +106,8 @@
                 // Agora vá para o arquivo routes/usuario.js
                 nomeServer: nomeVar,
                 emailServer: emailVar,
-                senhaServer: senhaVar
+                senhaServer: senhaVar,
+                sexoServer: sexoVar
             })
         }).then(function (resposta) {
 

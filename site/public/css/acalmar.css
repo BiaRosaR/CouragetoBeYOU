@@ -22,7 +22,7 @@ body {
 
 .header .container .logotipo img {
     width: 90px;
-    height: 90px;
+    height: 100px;
 }
 
 .logotipo {
@@ -42,7 +42,7 @@ body {
 .navBar a {
     color: white;
     text-decoration: none;
-    font-size: 30px;
+    font-size: 40px;
 }
 
 /*Final do Header*/
