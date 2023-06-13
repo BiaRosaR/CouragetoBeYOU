@@ -20,7 +20,8 @@
                 <p class="description description-primary">Se ainda não possui conta cadastrada, realize seu cadastro
                     antes do login. E
                     encoraje seu estilo maravilhoso como nosos serviços!</p>
-                <button id="signin" class="btn btn-primary"><a href= "../public/cadastro.html"><b>cadastrar</b></a></button>
+                <button id="signin" class="btn btn-primary"><a
+                        href="../public/cadastro.html"><b>cadastrar</b></a></button>
             </div>
             <div class="second-column"><!-- Início da social media -->
                 <h2 class="title title-second">Efetue seu login:</h2>
@@ -44,7 +45,7 @@
                     </ul>
                 </div><!-- Fim social media -->
                 <p class="description description-second">Utilize o email e senha já cadastrados:</p>
-                <form class="form">
+                <div class="form">
                     <label class="label-input" for="" style="background-color: transparent; border: 2px solid #69D1C5">
                         <i class="far fa-envelope icon-modify"></i>
                         <input id="email_input" type="email" placeholder="Email">
@@ -57,7 +58,7 @@
 
 
                     <button onclick="entrar()" class="btn btn-second"><b>Entrar</b></button>
-                </form>
+                </div>
             </div><!-- Final second column -->
         </div><!-- Final first conteudo -->
     </div><!--Final do container-->
@@ -66,19 +67,15 @@
 </html>
 <script>
     function entrar() {
-        aguardar();
+        // aguardar();
 
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
 
         if (emailVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "PREENCHA com o seu EMAIL E SENHA cadastrados para realizar o login!";
-            finalizarAguardar();
+
+            alert("PREENCHA com o seu EMAIL E SENHA cadastrados para realizar o login!");
             return false;
-        }
-        else {
-            setInterval(sumirMensagem, 5000)
         }
 
         console.log("FORM LOGIN: ", emailVar);
@@ -102,35 +99,30 @@
                 resposta.json().then(json => {
                     console.log(json);
                     console.log(JSON.stringify(json));
+                    console.log('logou')
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.id;
-                    sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
-
-                    setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
-                    }, 1000); // apenas para exibir o loading
+                    sessionStorage.AQUARIOS = JSON.stringify(json.aquarios);
 
                 });
+
+                window.location = "index.html";
 
             } else {
 
                 console.log("Houve um ERRO ao tentar realizar o login!");
 
-                resposta.text().then(texto => {
-                    console.error(texto);
-                    finalizarAguardar(texto);
-                });
+                // resposta.text().then(texto => {
+                //     console.error(texto);
+                //     finalizarAguardar(texto);
+                // });
             }
 
         }).catch(function (erro) {
-            console.log(erro);
+            console.log('a');
         })
 
         return false;
-    }
-
-    function sumirMensagem() {
-        cardErro.style.display = "none"
     }
 </script>

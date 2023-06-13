@@ -171,6 +171,8 @@ body {
     width: 100%;
     border: none;
     background-color: transparent;
+    color: white;
+    outline: none;
 }
 
 .label-input {
