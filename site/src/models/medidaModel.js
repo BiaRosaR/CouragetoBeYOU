@@ -61,8 +61,14 @@ function buscarMedidasEmTempoReal(idAquario) {
     return database.executar(instrucaoSql);
 }
 
+function chart1() {
+    const instrucao = `select sum(qtdBrancas) As totalBlusaBranca, sum(qtdPretas) AS totalBlusaPreta, sum(qtdAzuis) AS totalBlusaAzul  FROM Pesquisas;`;
+    return database.executar(instrucao);
+}
+
 
 module.exports = {
     buscarUltimasMedidas,
-    buscarMedidasEmTempoReal
+    buscarMedidasEmTempoReal,
+    chart1
 }

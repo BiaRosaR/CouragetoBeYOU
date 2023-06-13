@@ -39,10 +39,15 @@ function buscarMedidasEmTempoReal(req, res) {
         console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
         res.status(500).json(erro.sqlMessage);
     });
+
 }
+function chart1(req, res){
+    medidaModel.chart1().then((resposta)=>{res.status(200).json({blusas:resposta})});
+}
+
 
 module.exports = {
     buscarUltimasMedidas,
-    buscarMedidasEmTempoReal
-
+    buscarMedidasEmTempoReal,
+    chart1
 }
