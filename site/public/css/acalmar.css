@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+}
+
+/*Padronização da Página*/
+.container {
+    display: flex;
+    margin: auto;
+    width: 95%;
+}
+
+/*Início do Header*/
+.header {
+    flex-direction: row;
+    background-color: #242124;
+}
+
+.header .container {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .container .logotipo img {
+    width: 90px;
+    height: 90px;
+}
+
+.logotipo {
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+.navBar {
+    list-style: none;
+    width: 980px;
+    display: flex;
+    justify-content: space-around;
+    padding-inline-start: 25%;
+}
+
+.navBar a {
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+/*Final do Header*/
+
+/*Icone de player em cima do vídeo exibido*/
+.video-container {
+    position: relative;
+    border-bottom: 10px solid #242124;
+    display: flex;
+}
+
+.video-container .play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
