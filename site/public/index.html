@@ -16,6 +16,16 @@
             font-style: none;
         }
 
+        .titulo_noticia {
+            font-family: 'Vogue', Times, serif;
+            color: #D30C7B;
+            margin-top: 5%;
+            font-size: 55px;
+            /* Remove as margens padrão do título */
+            width: 100%;
+            /* Define a largura do título para ocupar uma linha */
+        }
+
         .nomeEmpresa {
             color: #D30C7B;
             font-family: 'Vogue', Times, serif;
@@ -66,13 +76,16 @@
                 </div>
                 <div class="todas_inputs">
                     <div class="input_separada">
-                        <h2 class="perguntas">Quantas peças pretas você tem?</h2> <input class="respostas" id="ipt_qtdPecaPreta">
+                        <h2 class="perguntas">Quantas peças pretas você tem?</h2> <input class="respostas"
+                            id="ipt_qtdPecaPreta">
                     </div>
                     <div class="input_separada">
-                        <h2 class="perguntas">Quantas peças brancas você tem?</h2> <input class="respostas" id="ipt_qtdPecaBranca">
+                        <h2 class="perguntas">Quantas peças brancas você tem?</h2> <input class="respostas"
+                            id="ipt_qtdPecaBranca">
                     </div>
                     <div class="input_separada">
-                        <h2 class="perguntas">Quantas peças azuis você tem?</h2> <input class="respostas" id="ipt_qtdPecaAzul">
+                        <h2 class="perguntas">Quantas peças azuis você tem?</h2> <input class="respostas"
+                            id="ipt_qtdPecaAzul">
                     </div>
                     <div class="input_separada">
                         <h2 class="perguntas">Utiliza peça xadrez?</h2>
@@ -94,13 +107,53 @@
                         </select>
                     </div>
                 </div>
-                <button class="BTNenviar_dashboard" onclick="registrarPesquisa()">responder</button>
+                <button class="BTNenviar_dashboard" onclick="registrarPesquisa()"><b>responder</b></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="banner_relatoAutora">
+        <img src="img/bia.png" class="imagem_banner">
+
+        <div class="texto_relato">
+
+            <h2 class="titulo_noticia">Relato da Autora</h2>
+            <div class="colunas_texto">
+                <p>É um prazer conhecê-los. Sou Beatriz Rosa da Rocha, a mente por trás deste website cujo propósito é
+                    incentivar o amor-próprio, a autoconfiança, o estilo e o autocuidado. Tenho dedicado tempo e esforço
+                    para crescer como indivíduo. Ao longo dessa jornada pessoal, tenho adquirido valiosos aprendizados
+                    que
+                    me permitem assumir minhas responsabilidades em cada acertoou erro e prosperar profissional,
+                    acadêmica e
+                    pessoalmente. E para iniciar esse processo, nada melhor do que escolher a vestimenta adequada para
+                    cada
+                    ocasião, de modo a atender às minhas expectativas pessoais.
+                </p>
+                <p>Na minha infância, era uma verdadeira diversão quando minha mãe me arrumava, fazendo com que eu me
+                    sentisse uma verdadeira princesa, assim como aquelas que tanto adorava assistir. Recordo-me também
+                    dos
+                    momentos em que passávamos no salão de beleza, com minha mãe sempre elegante, escolhendo
+                    cuidadosamente
+                    o corte de cabelo e as roupas.No entanto, à medida que cresço, estou assumindo decisões importantes
+                    e
+                    construindo um estilo próprio em cada escolha de vestuário que faço.
+
+                </p>
+                <p>
+                    As primeiras grandes decisões fashion que tomei na vida foram relacionadas aos meus dois vestidos de
+                    debutante e à roupa que usei no primeiro dia de aula na faculdade. Em um futuro próximo, almejo
+                    conquistar a oportunidade, como resultado do meu crescimento acadêmico, de escolher o look perfeito
+                    para
+                    o meu primeiro dia de trabalho. Essas escolhas representam momentos significativos em minha jornada,
+                    refletindo minha evolução pessoal e profissional.
+
+                </p>
             </div>
         </div>
     </div>
 
     <div class="banner2_evolução">
-        <img style="width: 100%; height: 1000px; border-bottom: #011F5B solid 10px;" src="img/fundo_banner2.png">
+        <img style="width: 100%; height: 1000px; border-bottom: #242124 solid 10px;" src="img/fundo_banner2.png">
     </div>
 </body>
 
@@ -113,7 +166,7 @@
         var xadrez = ipt_PecaXadrez.value;
         var sapato = sel_sapato.value;
 
-        if (qtd_PAzul == "" || qtd_PBranca  == "" || qtd_PPreta == "" || xadrez == "" || sapato == "") {
+        if (qtd_PAzul == "" || qtd_PBranca == "" || qtd_PPreta == "" || xadrez == "" || sapato == "") {
             alert("PREENCHA todos os CAMPOS para responder a pesquisa!");
 
             // finalizarAguardar();
@@ -129,7 +182,7 @@
                 // crie um atributo que recebe o valor recuperado aqui
                 // Agora vá para o arquivo routes/usuario.js
                 QTDpecaAzul: qtd_PAzul,
-                QTDpecaBranca:  qtd_PBranca,
+                QTDpecaBranca: qtd_PBranca,
                 QTDpecaPreta: qtd_PPreta,
                 xadrez: xadrez,
                 sapato: sapato
