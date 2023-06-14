@@ -139,12 +139,6 @@ body {
     margin: 1rem 0;
 }
 
-.link-social-media:hover .item-social-media {
-    background-color: #69D1C5;
-    color: #D30C7B;
-    border-color: white;
-}
-
 .list-social-media {
     display: flex;
     list-style-type: none;

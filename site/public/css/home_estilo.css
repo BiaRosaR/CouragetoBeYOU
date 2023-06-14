@@ -1,5 +1,7 @@
+
 body {
     margin: 0;
+    background-color: #242124;
 }
 
 /*Padronização da Página*/
@@ -198,3 +200,51 @@ body {
     font-size: 30px;
     text-align: justify;
 }
+
+/*Estilo Footer*/
+.footer {
+    background-color: transparent;
+    height: 360px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo_noFooter {
+    width: 300px;
+    height: 300px;
+}
+
+.frase_footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.social-media {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.list-social-media {
+    display: flex;
+    list-style-type: none;
+}
+
+.item-social-media {
+    border: 1px solid white;
+    border-radius: 70%;
+    width: 75px;
+    height: 75px;
+    line-height: 75px;
+    text-align: center;
+    color: white;
+    margin-right: 4%;
+}
+
