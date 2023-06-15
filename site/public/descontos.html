@@ -61,7 +61,7 @@
         <div class="bloco_perguntas" style="background-color: #242124e6; width: 53%; height: 900px;">
             <div class="texto2">
                 <div class="titulo_pesquisa">
-                    <h1>Calculadora para porcentagem de descontos naquela peça de roupa linda que você deseja comprar:</h1><br>
+                    <h1>Calculadora para porcentagem de descontos naquela<br> peça de roupa linda que você deseja comprar:</h1><br>
                 </div>
                 <div class="todas_inputs">
                     <div class="input_separada">
@@ -69,7 +69,7 @@
                         id="ipt_preco">
                     </div>
                     <div class="input_separada">
-                        <h2 class="perguntas">Qual a quantidade de peças que você pretende comprar?</h2> <input class="respostas"
+                        <h2  class="perguntas">Qual a quantidade de peças que você pretende comprar?</h2> <input class="respostas"
                         id="ipt_qtdpecas">
                     </div>
                     <div class="input_separada">
@@ -78,6 +78,7 @@
                     </div>
                 </div>
                 <button class="BTNenviar_dashboard" onclick="calcular()"><b>calcular</b></button>
+                <div class="div_mensagem"></div>
         </div>
     </div>
 
@@ -128,7 +129,7 @@
             var totalpreco = Number(preco * qtdPecas);
             var valoFinal = Number(totalpreco - desconto);
 
-            alert("Sua Bela peça ou peças, resultado do seu bom gosto com" + percente + " % ficam com o seguinte valor: " + valorFinal.toFixed(2));
+            div_mensagem.innerHML =`Sua Bela peça ou peças, resultado do seu bom gosto com ${percente}% ficam com o seguinte valor: ${valorFinal.toFixed(2)}`;
         }
     }
 </script>
