@@ -64,7 +64,7 @@ body {
   align-items: center;
 }
 
-.tamanho-conteudo { 
+.tamanho-conteudo {
   height: fit-content !important;
 }
 
@@ -87,7 +87,7 @@ body {
   display: flex;
 }
 
-.social .container{
+.social .container {
   justify-content: center;
 }
 
@@ -166,7 +166,7 @@ button {
 
 /* FORMULARIO */
 
-.alerta_erro{
+.alerta_erro {
   display: flex;
   justify-content: flex-end;
 }
@@ -183,7 +183,7 @@ button {
   margin-right: 10%;
 }
 
-.card_erro #mensagem_erro{
+.card_erro #mensagem_erro {
   font-weight: 500;
   font-size: 20px;
 }
@@ -238,9 +238,24 @@ input {
   width: 100vw;
 }
 
+.logo_menu {
+  width: 80px;
+  height: 80px;
+}
+
+.logotipo {
+  display: flex;
+  align-items: center;
+}
+
 .header-left a {
   text-decoration: none;
   color: white;
+}
+
+.icone {
+  width: 40px;
+  height: 40px;
 }
 
 .header-left {
@@ -254,8 +269,8 @@ input {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 3px solid #32b9cd;
-  background-color: #212124;
+  border-right: 3px solid #D30C7B;
+  background-color: #242124;
   /* border: 3px solid pink; */
 }
 
@@ -269,10 +284,6 @@ input {
   left: 25%;
 }
 
-.header-left h1 {
-  color: #32b9cd;
-}
-
 .hello {
   width: 100%;
   display: flex;
@@ -280,7 +291,7 @@ input {
 }
 
 .hello h3 {
-  color: #e3b062;
+  color: #69D1C5;
   font-weight: 300;
   font-size: 1.2rem;
 }
@@ -290,27 +301,51 @@ input {
 }
 
 .btn-nav {
-  width: 40%;
+  width: 50%;
   color: white;
-  background-color: #e6005a;
-  border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
+  display: flex;
+  justify-content: center;
 }
 
 .btn-nav-white {
-  width: 40%;
-  background-color: white;
-  border: 3px solid #e6005a;
-  border-radius: 5px;
+  width: 50%;
   text-align: center;
   padding: 2% 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-nav h3 {
+  margin: 0;
 }
 
 .btn-nav-white h3 {
-  color: #e6005a;
-  padding: 0;
   margin: 0;
+}
+
+.btn-nav-white a {
+  display: flex;
+  align-items: center;
+}
+
+.btn-nav a{
+  display: flex;
+  align-items: center;
+}
+
+.btn-nav-white .icone {
+  float: left;/*deixa a imagem e o icone um do lado do outro*/
+  width: 40px; /* Defina a largura desejada para a imagem */
+  margin-right: 10px; /* Adicione margem à direita para separar a imagem do texto */
+}
+
+.btn-nav .icone{
+  float: left;/*deixa a imagem e o icone um do lado do outro*/
+  width: 40px; /* Defina a largura desejada para a imagem */
+  margin-right: 10px; /* Adicione margem à direita para separar a imagem do texto */
 }
 
 .btn-nav h3,
@@ -324,64 +359,10 @@ input {
   padding: 0;
   width: 20%;
   background-color: #32b9cd;
-  color: white;
+  color: #e6005a;
   border-radius: 10px;
   text-align: center;
   padding: 10px 15px;
   margin-bottom: 100px;
   cursor: pointer;
-}
-
-/* pagina extra - simulador */
-.simulador {
-  color: white;
-
-}
-
-.simulador .container {
-  flex-direction: column
-}
-
-/* Alarme */
-#alerta {
-  position: absolute;
-  right: 0px;
-}
-
-.mensagem-alarme {
-  background-color: white;
-  border-radius: 5px;
-  width: 300px;
-  height: 80px;
-  margin: 10px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.mensagem-alarme h3 {
-  font-size: 14px;
-  margin: 0;
-}
-
-.mensagem-alarme .informacao {
-  margin: 10px;
-}
-
-.alarme-sino {
-  width: 48px;
-  height: 48px;
-  animation-name: bell;
-  animation-duration: 4s;
-  background-image: url('https://cdn-icons-png.flaticon.com/512/1157/1157000.png');
-  background-size: cover;
-  animation-iteration-count: infinite;
-}
-
-@keyframes bell {
-  0%   {transform: rotate(25deg)}
-  25%  {transform: rotate(-25deg)}
-  50%  {transform: rotate(25deg)}
-  75%  {transform: rotate(-25deg)}
-  100% {transform: rotate(25deg)}
 }

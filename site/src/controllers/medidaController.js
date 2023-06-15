@@ -41,6 +41,7 @@ function buscarMedidasEmTempoReal(req, res) {
     });
 
 }
+
 function chart1(req, res){
     medidaModel.chart1().then((resposta)=>{res.status(200).json({blusas:resposta})});
 }

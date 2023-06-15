@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/calculo.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="icon" href="img/logo.png">
+    <title>Home - CTBY</title>
+    <style>
+        @font-face {
+            font-family: 'Vogue';
+            src: url('fontes/Vogue.ttf') format('truetype');
+            font-weight: normal;
+            font-style: none;
+        }
+
+        .titulo_noticia {
+            font-family: 'Vogue', Times, serif;
+            color: #D30C7B;
+            margin-top: 5%;
+            font-size: 55px;
+            /* Remove as margens padrão do título */
+            width: 100%;
+            /* Define a largura do título para ocupar uma linha */
+        }
+
+        .nomeEmpresa {
+            color: #D30C7B;
+            font-family: 'Vogue', Times, serif;
+            font-size: 45px;
+            font-weight: normal;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--Início do Header-->
+    <div class="header">
+        <div class="container">
+            <div class="logotipo">
+                <img src="img/logo.png" alt=""></img>
+                <h1 class="nomeEmpresa">Courage to Be you</h1>
+            </div>
+            <ul class="navBar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="alcamar.html">Acalma-se</a></li>
+                <li><a href="descontos.html">Descontos</a></li>
+                <li><a href="cadastro.html">Cadastre-se</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--Final do Header-->
+
+    <!--Início Formulário-->
+    <div class="formulario">
+        <div class="bloco_perguntas" style="background-color: #242124e6; width: 53%; height: 900px;">
+            <div class="texto2">
+                <div class="titulo_pesquisa">
+                    <h1>Calculadora para porcentagem de descontos naquela peça de roupa linda que você deseja comprar:</h1><br>
+                </div>
+                <div class="todas_inputs">
+                    <div class="input_separada">
+                        <h2 class="perguntas">Qual o preço unitário da peça de roupa em questão?</h2> <input class="respostas"
+                        id="ipt_preco">
+                    </div>
+                    <div class="input_separada">
+                        <h2 class="perguntas">Qual a quantidade de peças que você pretende comprar?</h2> <input class="respostas"
+                        id="ipt_qtdpecas">
+                    </div>
+                    <div class="input_separada">
+                        <h2 class="perguntas">Informe o percentual de desconto:</h2> <input class="respostas" id="ipt_percentual">
+                    </div>
+                    </div>
+                </div>
+                <button class="BTNenviar_dashboard" onclick="calcular()"><b>calcular</b></button>
+        </div>
+    </div>
+
+    <div class="footer">
+        <img class="logo_noFooter" src="img/logo.png">
+        <div class="frase_footer">
+            <p>
+             Estilo é criar combinações que façam sentido <br>para você e te façam sentir mais confiante.   
+            </p>
+        </div>
+            <div class="social-media"><!-- Início da social media -->
+                <ul class="list-social-media">
+                    <a style="font-size: 35px;" class="link-social-media" href="#">
+                        <li class="item-social-media">
+                            <i class="fab fa-facebook-f"></i>
+                        </li>
+                    </a>
+                    <a style="font-size: 35px;" class="link-social-media" href="#">
+                        <li class="item-social-media">
+                            <i class="fab fa-google-plus-g"></i>
+                        </li>
+                    </a>
+                    <a class="link-social-media" href="#">
+                        <li style="font-size: 35px;" class="item-social-media">
+                            <i class="fab fa-linkedin-in"></i>
+                        </li>
+                    </a>
+                </ul>
+            </div><!-- Fim social media -->
+    </div>
+</body>
+
+</html>
+<script>
+    function calcular() {
+        var preco = Number(ipt_preco.value);
+        var qtdPecas = Number(ipt_qtdpecas.value);
+        var percente = Number(ipt_percentual.value);
+        var erro = 0;
+
+        if (preco <= 0 || qtdPecas <= 0 || percente <= 0) {
+            alert("Todos os valores informados nos CAMPOS DEVEM SER maior do 0 e Números inteiros");
+            erro++;
+        }
+
+        if (erro == 0) {
+            var desconto = Number(preco * (percente / 100));
+            var totalpreco = Number(preco * qtdPecas);
+            var valoFinal = Number(totalpreco - desconto);
+
+            alert("Sua Bela peça ou peças, resultado do seu bom gosto com" + percente + " % ficam com o seguinte valor: " + valorFinal.toFixed(2));
+        }
+    }
+</script>

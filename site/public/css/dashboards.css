@@ -94,7 +94,7 @@ body {
 }
 
 .div-results .feed-container {
-  background-color: #212124;
+  background-color: #242124;
   border-radius: 5px;
   margin-bottom: 80px;
 }
@@ -275,4 +275,10 @@ body {
 canvas {
   width: 100% !important;
   height: 100% !important;
+}
+
+.grafico_linha{
+  width: 890px;
+  height: 900px;
+  margin-left: 4%;
 }

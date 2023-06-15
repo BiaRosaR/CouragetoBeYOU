@@ -1,12 +1,11 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboards - CTBY</title>
-
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/dashboards.css">
     <script src="../js/sessao.js"></script>
@@ -22,6 +21,22 @@
 
     <!--FONT AWESOME-->
     <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
+
+    <style>
+        @font-face {
+            font-family: 'Vogue';
+            src: url('fontes/Vogue.ttf') format('truetype');
+            font-weight: normal;
+            font-style: none;
+        }
+
+        .header-left h1 {
+            color: #D30C7B;
+            font-family: 'Vogue', Times, serif;
+            font-weight: normal;
+            font-size: 30px;
+        }
+    </style>
 </head>
 
 <!-- <body onload=" atualizarFeed()"> -->
@@ -30,26 +45,32 @@
 
     <div class="janela">
         <div class="header-left">
-            <h1>Courage To Be You</h1>
+            <div class="logotipo">
+                <img class="logo_menu" src="../img/logo.png">
+                <h1>Courage To Be You</h1>
+            </div>
 
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
             </div>
 
-            <!--<div class="btn-nav-white">
-                <a href="./cards.html">
-                    <h3>My Closet</h3>
+            <div class="btn-nav-white">
+                <a href="#">
+                    <img class="icone" src="../img/closet.png">
+                    <h3 style="width: 100px;">My Closet</h3>
                 </a>
-            </div>-->
+            </div>
 
             <div class="btn-nav">
-
-                <h3>Gráficos</h3>
-
+                <a href="./dashboard.html">
+                    <img class="icone" src="../img/icone_grafico.png">
+                    <h3>Tendências</h3>
+                </a>
             </div>
 
             <div class="btn-nav-white">
                 <a href="./mural.html">
+                    <img class="icone" src="../img/icone_comentarios.png">
                     <h3>Comentários</h3>
                 </a>
             </div>
@@ -67,9 +88,9 @@
             <div class="btns-dash" id="btnAquario">
                 <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
             </div>
-            <div>
+            <div class="grafico_linha">
                 <canvas id="myChart"></canvas>
-              </div>
+            </div>
         </div>
     </div>
 
@@ -84,7 +105,7 @@
     const valorGrafico = new Chart(grafico, {
         type: 'bar',
         data: {
-            labels: ['Red', 'Blue', 'Yellow'],
+            labels: ['Blusa Branca', 'Blusa Preta', 'Blusa Azul'],
             datasets: [{
                 label: '# of Votes',
                 data: [],
@@ -95,14 +116,14 @@
             scales: {
                 y: {
                     beginAtZero: true,
-                    suggestedMax: 200
+                    suggestedMax: 50
                 }
             }
         }
     });
 
-    fetch("/medidas/chart1").then(resposta =>{
-        resposta.json().then((res) =>{
+    fetch("/medidas/chart1").then(resposta => {
+        resposta.json().then((res) => {
             console.log(res);
             valorGrafico.data.datasets[0].data = [res.blusas[0].totalBlusaBranca, res.blusas[0].totalBlusaPreta, res.blusas[0].totalBlusaAzul]
             valorGrafico.update()
