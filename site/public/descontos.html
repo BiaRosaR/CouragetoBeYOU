@@ -58,7 +58,7 @@
 
     <!--Início Formulário-->
     <div class="formulario">
-        <div class="bloco_perguntas" style="background-color: #242124e6; width: 53%; height: 900px;">
+        <div class="bloco_perguntas" style="background-color: #242124e6; width: 53%; height: 800px;">
             <div class="texto2">
                 <div class="titulo_pesquisa">
                     <h1>Calculadora para porcentagem de descontos naquela<br> peça de roupa linda que você deseja comprar:</h1><br>
@@ -129,7 +129,8 @@
             var totalpreco = Number(preco * qtdPecas);
             var valoFinal = Number(totalpreco - desconto);
 
-            div_mensagem.innerHML =`Sua Bela peça ou peças, resultado do seu bom gosto com ${percente}% ficam com o seguinte valor: ${valorFinal.toFixed(2)}`;
+            // div_mensagem.innerHTML =`Sua Bela peça ou peças, resultado do seu bom gosto com ${percente}% ficam com o seguinte valor: ${valorFinal.toFixed(2)}`;
+            alert("Sua Bela peça ou peças, resultado do seu bom gosto com " + percente + "% ficam com o seguinte valor:"+ valoFinal.toFixed(2));
         }
     }
 </script>

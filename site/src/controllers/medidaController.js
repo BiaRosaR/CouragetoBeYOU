@@ -46,9 +46,13 @@ function chart1(req, res){
     medidaModel.chart1().then((resposta)=>{res.status(200).json({blusas:resposta})});
 }
 
+// function chart2(req, res){
+//     medidaModel.chart2().then((resposta)=>{res.status(200).json({blusas:resposta})});
+// }
 
 module.exports = {
     buscarUltimasMedidas,
     buscarMedidasEmTempoReal,
-    chart1
+    chart1,
+    // chart2
 }

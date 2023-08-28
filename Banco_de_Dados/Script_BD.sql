@@ -20,15 +20,6 @@ fkUsuario INT,
 FOREIGN KEY(fkUsuario) REFERENCES Usuario(idUsuario)
 );
 
-CREATE TABLE Comentarios(
-idComentario INT PRIMARY KEY AUTO_INCREMENT,
-titulo VARCHAR(100),
-descricao VARCHAR(180),
-fkUsuario INT,
-FOREIGN KEY(fkUsuario) REFERENCES Usuario(idUsuario)
-)AUTO_INCREMENT = 	10;
-
-
 SELECT * FROM Usuario;
 SELECT * FROM Comentarios;
 SELECT * FROM Pesquisas;

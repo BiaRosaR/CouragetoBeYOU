@@ -189,15 +189,15 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 2% 2%;
+    margin-right: 2%;
     width: 100%; /* Define a largura total para as colunas */
 }
 
 .colunas_texto{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 70px;
-    font-size: 30px;
+    gap: 30px;
+    font-size: 28px;
     text-align: justify;
 }
 

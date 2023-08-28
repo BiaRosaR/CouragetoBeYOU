@@ -66,6 +66,10 @@ function chart1() {
     return database.executar(instrucao);
 }
 
+// function chart2(){
+//     const instrucao = `select sum()`;
+// }
+
 
 module.exports = {
     buscarUltimasMedidas,

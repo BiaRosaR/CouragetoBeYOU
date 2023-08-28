@@ -15,4 +15,9 @@ router.get("/chart1", function (req, res) {
     medidaController.chart1(req, res);
 })
 
+// router.get("/chart2", function (req, res) {
+//     medidaController.chart2(req, res);
+// })
+
+
 module.exports = router;

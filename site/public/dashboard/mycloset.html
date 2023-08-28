@@ -51,7 +51,7 @@
             </div>
 
             <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário belo(a)</span>!</h3>
+                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
             </div>
 
             <div class="btn-nav-white">
@@ -75,19 +75,9 @@
         </div>
 
         <div class="dash">
-            <div id="alerta">
-            </div>
-
-            <div class="btns-dash" id="btnAquario">
-                <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
-            </div>
-            <div class="grafico_linha">
-                <canvas id="myChart"></canvas>
-            </div>
-
-            <!-- <div>
-                <canvas id="myChart2"></canvas>
-            </div> -->
+            <button class="btn_feminino" onclick="sortearF()">Sortear Roupas Femininas</button>
+            <button class="btn_masculino" onclick="sortearM()">Sortear Roupas Masculinas</button>
+            <div id="exibir"></div>
         </div>
     </div>
 
@@ -97,61 +87,22 @@
 </html>
 
 <script>
-    const grafico = document.getElementById('myChart');
+    var vet_roupasF = ['img_looks/lookF1.jpeg', 'img_looks/lookF2.jpeg', 'img_looks/lookF3.jpeg', 'img_looks/lookF4.jpeg', 'img_looks/lookF5.jpeg',
+        'img_looks/lookF6.jpeg', 'img_looks/lookF7.jpeg', 'img_looks/lookF8.jpeg'
+    ];
 
-    const valorGrafico = new Chart(grafico, {
-        type: 'bar',
-        data: {
-            labels: ['Blusa Branca', 'Blusa Preta', 'Blusa Azul'],
-            datasets: [{
-                label: '# of Votes',
-                data: [],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    suggestedMax: 50
-                }
-            }
-        }
-    });
+    var vet_roupasM = ['img_looks/look1M.jpeg', 'img_looks/look2M.jpeg', 'img_looks/look3M.jpeg', 'img_looks/look4M.jpeg', 'img_looks/look5M.png',
+        'img_looks/look6M.jpeg', 'img_looks/look7M.jpeg', 'img_looks/look8M.jpeg'
+    ];
 
-    fetch("/medidas/chart1").then(resposta => {
-        resposta.json().then((res) => {
-            console.log(res);
-            valorGrafico.data.datasets[0].data = [res.blusas[0].totalBlusaBranca, res.blusas[0].totalBlusaPreta, res.blusas[0].totalBlusaAzul]
-            valorGrafico.update()
-        })
-    })
+    function sortearF() {
+        var indice = Math.floor(Math.random() * vet_roupasF.length);
+        console.log(vet_roupasF[indice]);
+        exibir.innerHTML = `<img src="${vet_roupasF[indice]}" style="height: 740px; margin-left: 30%;  margin-top: 5%;"/>`;
+    }
 
-
-    // const grafico2 = document.getElementById('myChart2');
-
-    // const config = new chart(grafico2, {
-    //     type: 'doughnut',
-    //     data: data,
-    //     options: {
-    //         responsive: true,
-    //         plugins: {
-    //             legend: {
-    //                 position: 'top',
-    //             },
-    //             title: {
-    //                 display: true,
-    //                 text: 'Chart.js Doughnut Chart'
-    //             }
-    //         }
-    //     },
-    // });
-
-    // fetch("/medidas/chart2").then(resposta => {
-    //     resposta.json().then((res) => {
-    //         console.log(res);
-    //         valorGrafico.data.datasets[0].data = [res.xadrez[0].totalBlusaBranca, res.xadrez[0].totalBlusaPreta]
-    //         valorGrafico.update()
-    //     })
-    // })
+    function sortearM() {
+        var indice = Math.floor(Math.random() * vet_roupasM.length);
+        exibir.innerHTML = `<img src="${vet_roupasM[indice]}" style="height: 740px; margin-left: 30%;  margin-top: 5%;"/>`;
+    }
 </script>

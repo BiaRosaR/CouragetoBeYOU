@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    background-color: #242124;
 }
 
 /*Padronização da Página*/
@@ -36,7 +37,7 @@ body {
     width: 980px;
     display: flex;
     justify-content: space-around;
-    padding-inline-start: 25%;
+    padding-inline-start: 15%;
 }
 
 .navBar a {
@@ -45,10 +46,56 @@ body {
     font-size: 40px;
 }
 
+/*Estilo Footer*/
+.footer {
+    height: 360px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo_noFooter {
+    width: 300px;
+    height: 300px;
+}
+
+.frase_footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.social-media {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.list-social-media {
+    display: flex;
+    list-style-type: none;
+}
+
+.item-social-media {
+    border: 1px solid white;
+    border-radius: 70%;
+    width: 75px;
+    height: 75px;
+    line-height: 75px;
+    text-align: center;
+    color: white;
+    margin-right: 4%;
+}
+
 /*Final do Header*/
 
 /*Icone de player em cima do vídeo exibido*/
-.video-container {
+/* .video-container {
     position: relative;
     border-bottom: 10px solid #242124;
     display: flex;
@@ -59,4 +106,4 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
+} */

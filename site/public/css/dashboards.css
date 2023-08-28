@@ -278,7 +278,56 @@ canvas {
 }
 
 .grafico_linha{
-  width: 890px;
+  width: 1000px;
   height: 900px;
-  margin-left: 4%;
+  margin-left: 20%;
+  align-items: center;
+}
+
+/*Pagina de sorteio*/
+
+.btn_masculino{
+  background-color: transparent;
+  border: 1px solid #69D1C5;
+  transition: background-color .5s;
+  color: #69D1C5;
+  margin-left: 20%;
+  margin-top: 20px;
+  width: 15%;
+  height: 5%;
+  font-size: 18px;
+}
+
+.btn_feminino{
+  background-color: transparent;
+  border: 1px solid #69D1C5;
+  transition: background-color .5s;
+  color: #69D1C5;
+  margin-left: 20%;
+  margin-top: 20px;
+  width: 15%;
+  height: 5%;
+  font-size: 18px;
+}
+
+.dash-header {
+  background-color: #212124;
+}
+
+.dash {
+  width: 80%;
+  position: relative;
+  top: 0;
+  left: 20%;
+  background-color: #161618;
+  height: 100vh;
+  overflow: auto;
+}
+
+.regua {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin-top: 30px;
 }
