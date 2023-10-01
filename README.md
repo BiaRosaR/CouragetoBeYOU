@@ -1,2 +1,2 @@
 # CourageToBeYOU
-Otimização do tempo através da criatividade para looks realizada com sucesso em um We Site Fashion, apoiando sua autoconfiança e beleza natural.
+Otimização do tempo através da criatividade para looks realizada com sucesso em um Web Site Fashion, apoiando sua autoconfiança e beleza natural.
