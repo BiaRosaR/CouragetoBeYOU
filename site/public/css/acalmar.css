@@ -37,7 +37,7 @@ body {
     width: 980px;
     display: flex;
     justify-content: space-around;
-    padding-inline-start: 15%;
+    padding-inline-start: 5%;
 }
 
 .navBar a {
@@ -95,7 +95,7 @@ body {
 /*Final do Header*/
 
 /*Icone de player em cima do vídeo exibido*/
-/* .video-container {
+.video-container {
     position: relative;
     border-bottom: 10px solid #242124;
     display: flex;
@@ -103,7 +103,12 @@ body {
 
 .video-container .play {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
-} */
+} 
+
+.play img {
+    width: 60px;
+    height: 60px;
+  }

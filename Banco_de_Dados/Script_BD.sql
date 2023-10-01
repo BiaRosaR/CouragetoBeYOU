@@ -43,7 +43,8 @@ INSERT INTO Usuario(nome, email, sexo, senha) VALUES("Bianca de Andrade", "Bianc
 													("Coco Chanel", "CC@gmail.com", "F", "12345"),
 													("Christian Dior", "ChrisDior@hotmail.com", "M", "12345"),
 													("Winnie Harlow", "WHarlow@gmail.com", "F", "12345"),
-													("Gisele Bündchen", "GiseleB@globomail.com", "F", "12345");
+													("Gisele Bündchen", "GiseleB@globomail.com", "F", "12345"),
+                                                    ("Livia Rosa da rocha", "liviaRR@gmail.com", "F", "12345");
                                                     
                                                    
 -- iNSERINDO ALGUNS TIPOS PADRÕES DE ROUPAS
@@ -60,12 +61,13 @@ INSERT INTO TipoRoupa(nome, tecido) VALUES("Calça", "Jeans"),
                                           
                                           
 -- INSERINDO ALGUMAS RESPOSTAS PARA PESQUISA
-INSERT INTO Pesquisas(qtdBrancas, qtdPretas, qtdAzuis, xadrez, sapato, fkUsuario) VALUES(3, 10, 2, "sim","Salto Alto", 1),
-																						(15, 25, 15, "sim","Tênis", 2),
-                                                                                        (10, 10, 15, "Sim","Salto Alto", 3),
-                                                                                        (15, 30, 10, "Não","Botina Masculina", 4),
+INSERT INTO Pesquisas(qtdBrancas, qtdPretas, qtdAzuis, xadrez, sapato, fkUsuario) VALUES(3, 10, 2, "Sim","Salto Alto", 1),
+																						(15, 25, 15, "Sim","Tênis", 2),
+                                                                                        (10, 10, 15, "Sim","Chinelo", 3),
+                                                                                        (15, 30, 10, "Não","Botina masculina / Bota de Boiadeira", 4),
                                                                                         (5, 8, 20, "Não","Tênis", 5),
-                                                                                        (25, 15, 9, "sim","Bota de boiadeira", 6);
+                                                                                        (25, 15, 9, "Sim","Botina masculina / Bota de Boiadeira", 6),
+																						(10, 30, 10, "Não","Salto Alto", 7);
                                                                                         
                                           
 -- VIEW vizualização das Têndencias nas Blusas
@@ -77,8 +79,6 @@ SELECT
   SUM(qtdAzuis) AS totalBlusaAzul 
 FROM
   Pesquisas;
-  
-SELECT * FROM vw_pesquisaBlusas;
 
 -- VIEW para vizualização da aceitação do xadrez
 DROP VIEW IF EXISTS vw_pequisasXadrez;
@@ -88,8 +88,23 @@ SELECT
   COUNT(CASE WHEN xadrez = 'Não' THEN 1 END) AS qtd_nao
 FROM
   Pesquisas;
-  
-SELECT * FROM vw_pequisasxadrez;
 
--- VIEW para vizualização da preferencia dos usuários referente ao sapato
+-- VIEW para vizualização da preferência dos usuários referente ao sapato
+DROP VIEW IF EXISTS vw_preferenciaSapato;
+CREATE OR REPLACE VIEW vw_preferenciaSapato AS
+SELECT 
+  COUNT(CASE WHEN sapato = 'Tênis' THEN 1 END) AS qtd_tenis,
+  COUNT(CASE WHEN sapato = 'Sapatilha' THEN 1 END) AS qtd_sapatilha,
+  COUNT(CASE WHEN sapato = 'Rasterinha' THEN 1 END) AS qtd_rasterinha,
+  COUNT(CASE WHEN sapato = 'Salto alto' THEN 1 END) AS qtd_salto,
+  COUNT(CASE WHEN sapato = 'Botina masculina / Bota de Boiadeira' THEN 1 END) AS qtd_bota,
+  COUNT(CASE WHEN sapato = 'Sapato social masculino' THEN 1 END) AS qtd_socialM,
+  COUNT(CASE WHEN sapato = 'Chinelo' THEN 1 END) AS qtd_chinelo
+FROM
+  Pesquisas;
   
+-- Usuário oficial Courage to be you 
+DROP USER IF EXISTS 'user_CTBY'@'localhost';
+CREATE USER 'user_CTBY'@'localhost' IDENTIFIED BY 'Urubu100';
+GRANT INSERT ON *.* TO 'user_CTBY'@'localhost';
+FLUSH PRIVILEGES;

@@ -49,9 +49,9 @@
             <video class="fullscreen-video" width="100%" height="100%" controls="controls">
                 <source src="video/mar.mp4" type="video/mp4">
             </video>
-            <!-- <div class="play">
+            <div class="play">
                 <img src="img/icone_player.png">
-            </div> -->
+            </div>
         </div>
     <!--Final Acalma-se -->
 
@@ -85,3 +85,16 @@
 </body>
 
 </html>
+<script>
+    // Seleciona a imagem de play
+    const playButton = document.querySelector('.play img');
+  
+    // Adiciona um evento de clique à imagem de play
+    playButton.addEventListener('click', () => {
+      // Cria um objeto Audio
+      const audio = new Audio("audio/somMar.mp3");
+  
+      // Reproduz o áudio
+      audio.play();
+    });
+  </script>
