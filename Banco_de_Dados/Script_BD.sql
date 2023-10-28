@@ -106,5 +106,5 @@ FROM
 -- Usuário oficial Courage to be you 
 DROP USER IF EXISTS 'user_CTBY'@'localhost';
 CREATE USER 'user_CTBY'@'localhost' IDENTIFIED BY 'Urubu100';
-GRANT INSERT ON *.* TO 'user_CTBY'@'localhost';
+GRANT INSERT, SELECT, UPDATE ON *.* TO 'user_CTBY'@'localhost';
 FLUSH PRIVILEGES;
