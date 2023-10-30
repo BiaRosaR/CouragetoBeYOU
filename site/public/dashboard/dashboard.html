@@ -1,157 +1,266 @@
 <html lang="pt-br">
-
-<head>
-    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboards - CTBY</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/dashboards.css">
-    <script src="../js/sessao.js"></script>
-    <script src="./../js/alerta.js"></script>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/dashboards.css" />
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- scripts do Chart.js - 2022-1 -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!--FONT AWESOME-->
-    <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/9f7414eb10.js"
+      crossorigin="anonymous"
+    ></script>
 
     <style>
-        @font-face {
-            font-family: 'Vogue';
-            src: url('fontes/Vogue.ttf') format('truetype');
-            font-weight: normal;
-            font-style: none;
-        }
+      @font-face {
+        font-family: "Vogue";
+        src: url("fontes/Vogue.ttf") format("truetype");
+        font-weight: normal;
+        font-style: none;
+      }
 
-        .header-left h1 {
-            color: #D30C7B;
-            font-family: 'Vogue', Times, serif;
-            font-weight: normal;
-            font-size: 30px;
-        }
+      .header-left h1 {
+        color: #d30c7b;
+        font-family: "Vogue", Times, serif;
+        font-weight: normal;
+        font-size: 30px;
+      }
     </style>
-</head>
+  </head>
 
-<!-- <body onload=" atualizarFeed()"> -->
-
-<body>
-
+  <body>
     <div class="janela">
-        <div class="header-left">
-            <div class="logotipo">
-                <img class="logo_menu" src="../img/logo.png">
-                <h1>Courage To Be You</h1>
-            </div>
-
-            <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário belo(a)</span>!</h3>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="mycloset.html">
-                    <img class="icone" src="../img/closet.png">
-                    <h3 style="width: 100px;">My Closet</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav">
-                <a href="./dashboard.html">
-                    <img class="icone" src="../img/icone_grafico.png">
-                    <h3>Tendências</h3>
-                </a>
-            </div>
-
-            <div class="btn-logout" onclick="limparSessao()">
-                <h3>Sair</h3>
-            </div>
-
+      <div class="header-left">
+        <div class="logotipo">
+          <img class="logo_menu" src="../img/logo.png" />
+          <h1>Courage To Be You</h1>
         </div>
 
-        <div class="dash">
-            <div id="alerta">
-            </div>
+        <div class="hello">
+          <h3>Olá, <span id="b_usuario">usuário belo(a)</span>!</h3>
+        </div>
 
-            <div class="btns-dash" id="btnAquario">
-                <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
-            </div>
-            <div class="grafico_linha">
+        <div class="btn-nav-white">
+          <a href="mycloset.html">
+            <img class="icone" src="../img/closet.png" />
+            <h3 style="width: 100px">My Closet</h3>
+          </a>
+        </div>
+
+        <div class="btn-nav">
+          <a href="./dashboard.html">
+            <img class="icone" src="../img/icone_grafico.png" />
+            <h3>Tendências</h3>
+          </a>
+        </div>
+
+        <div class="btn-logout" onclick="limparSessao()">
+          <h3>Sair</h3>
+        </div>
+      </div>
+
+      <div class="dash">
+        <div class="container-graficos">
+          <div class="graficos-lado-a-lado">
+            <div class="card">
+              <h5 class="card-title">
+                Cores de blusas <span id="optionSelecionada">| Respostas</span>
+              </h5>
+              <div class="grafico-barras">
                 <canvas id="myChart"></canvas>
+              </div>
             </div>
-
-            <!-- <div>
+            <div class="card-grafico-pizza">
+              <h5 class="card-title">
+                Blusa xadrez <span id="optionSelecionada">| Respostas</span>
+              </h5>
+              <div class="grafico-pizza">
                 <canvas id="myChart2"></canvas>
-            </div> -->
+              </div>
+            </div>
+          </div>
+          <div class="card-grafico-barrasVertical">
+            <h5 class="card-title">
+              Tendência entre os sapatos
+              <span id="optionSelecionada">| Respostas</span>
+            </h5>
+            <div class="grafico-barrasVertical">
+              <canvas id="myChart3"></canvas>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-
-
-</body>
-
+  </body>
 </html>
 
 <script>
-    const grafico = document.getElementById('myChart');
+  const grafico = document.getElementById("myChart");
 
-    const valorGrafico = new Chart(grafico, {
-        type: 'bar',
-        data: {
-            labels: ['Blusa Branca', 'Blusa Preta', 'Blusa Azul'],
-            datasets: [{
-                label: '# of Votes',
-                data: [],
-                borderWidth: 1
-            }]
+  const valorGrafico = new Chart(grafico, {
+    type: "bar",
+    data: {
+      labels: ["Blusa Branca", "Blusa Preta", "Blusa Azul"],
+      datasets: [
+        {
+          label: "Votos",
+          data: [],
+          backgroundColor: [
+            "rgba(255, 99, 132, 0.2)",
+            "rgba(54, 162, 235, 0.2)",
+            "rgba(75, 192, 192, 0.2)",
+          ],
+          borderColor: [
+            "rgba(255, 99, 132, 1)",
+            "rgba(54, 162, 235, 1)",
+            "rgba(75, 192, 192, 1)",
+          ],
+          borderWidth: 1,
         },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    suggestedMax: 50
-                }
-            }
-        }
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+          suggestedMax: 50,
+        },
+      },
+      plugins: {
+        legend: {
+          labels: {
+            color: "white",
+          },
+          display:false
+        },
+      },
+    },
+  });
+
+  fetch("/medidas/chart1").then((resposta) => {
+    resposta.json().then((res) => {
+      console.log(res);
+      valorGrafico.data.datasets[0].data = [
+        res.blusas[0].totalBlusaBranca,
+        res.blusas[0].totalBlusaPreta,
+        res.blusas[0].totalBlusaAzul,
+      ];
+      valorGrafico.update();
     });
-
-    fetch("/medidas/chart1").then(resposta => {
-        resposta.json().then((res) => {
-            console.log(res);
-            valorGrafico.data.datasets[0].data = [res.blusas[0].totalBlusaBranca, res.blusas[0].totalBlusaPreta, res.blusas[0].totalBlusaAzul]
-            valorGrafico.update()
-        })
-    })
+  });
 
 
-    // const grafico2 = document.getElementById('myChart2');
 
-    // const config = new chart(grafico2, {
-    //     type: 'doughnut',
-    //     data: data,
-    //     options: {
-    //         responsive: true,
-    //         plugins: {
-    //             legend: {
-    //                 position: 'top',
-    //             },
-    //             title: {
-    //                 display: true,
-    //                 text: 'Chart.js Doughnut Chart'
-    //             }
-    //         }
-    //     },
-    // });
+  const grafico2 = document.getElementById("myChart2");
 
-    // fetch("/medidas/chart2").then(resposta => {
-    //     resposta.json().then((res) => {
-    //         console.log(res);
-    //         valorGrafico.data.datasets[0].data = [res.xadrez[0].totalBlusaBranca, res.xadrez[0].totalBlusaPreta]
-    //         valorGrafico.update()
-    //     })
-    // })
+  const valorGrafico2 = new Chart(grafico2, {
+    type: "doughnut",
+    data: {
+      datasets: [
+        {
+          data: [], // Certifique-se de adicionar os dados
+          backgroundColor: ["rgba(211, 12, 123, 1)", "rgba(50, 185, 205, 1)"], // Adicione as cores para os dados
+          borderColor: ["rgba(211, 12, 123, 1)", "rgba(50, 185, 205, 1)"],
+          borderWidth: 1,
+        },
+      ],
+      labels: ["Sim", "Não"], // Labels para o gráfico de rosca (doughnut)
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: "top",
+          labels: {
+            color: "white", // Define a cor do texto para branco na legenda
+          },
+        },
+        title: {
+          display: false,
+        },
+      },
+    },
+  });
+
+  fetch("/medidas/chart2").then((resposta) => {
+    resposta.json().then((res) => {
+      console.log(res);
+      valorGrafico2.data.datasets[0].data = [
+        res.xadrez[0].qtd_sim,
+        res.xadrez[0].qtd_nao,
+      ];
+      valorGrafico2.update();
+    });
+  });
+
+
+
+  const grafico3 = document.getElementById("myChart3");
+
+  const valorGrafico3 = new Chart(grafico3, {
+    type: "bar",
+    data: {
+      labels: [
+        "Tênis",
+        "Sapatilha",
+        "Rasterinha",
+        "Salto alto",
+        "Botina/Bota",
+        "Sapato Social",
+        "Chinelo",
+      ],
+      datasets: [
+        {
+          label: "Votos",
+          data: [],
+          backgroundColor: "rgba(240, 240, 240, 0.7)",
+          borderWidth: 1,
+        },
+      ],
+    },
+    options: {
+      indexAxis: "y", // Altera a orientação do gráfico para o eixo y representar as labels
+      scales: {
+        x: {
+          beginAtZero: true, // Permite que o eixo x comece em zero
+        },
+      },
+      plugins: {
+        legend: {
+          display:false
+        },
+        labels: {
+            color: "white",
+          },
+      },
+    },
+  });
+
+  fetch("/medidas/chart3").then((resposta) => {
+    resposta.json().then((res) => {
+      console.log(res);
+      valorGrafico3.data.datasets[0].data = [
+        res.sapatos[0].qtd_tenis,
+        res.sapatos[0].qtd_sapatilha,
+        res.sapatos[0].qtd_rasterinha,
+        res.sapatos[0].qtd_salto,
+        res.sapatos[0].qtd_bota,
+        res.sapatos[0].qtd_socialM,
+        res.sapatos[0].qtd_chinelo,
+      ];
+      valorGrafico3.update();
+    });
+  });
 </script>

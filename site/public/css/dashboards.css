@@ -3,109 +3,8 @@
 *,
 body {
   font-family: "Exo 2", sans-serif;
-}
-
-.label-captura {
-  display: flex;
-  justify-content: center;
-}
-
-.dash-right .avisos {
-  width: 100%;
-  /* border: 3px solid pink; */
-  color: rgb(216, 216, 216);
-  font-family: "Exo 2", sans-serif;
-}
-
-.dash-right .avisos .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.dash-right .avisos .container .div-form {
-  width: 100%;
-}
-
-.dash-right .avisos .container .div-form #form_postagem {
-  width: 100%;
-}
-
-.dash-right .avisos .div-form label {
-  width: 100%;
-}
-
-.dash-right .avisos .div-form input {
-  width: 100%;
-  border-radius: 5px;
-}
-
-.dash-right .avisos .div-form textarea {
-  width: 100%;
-  /* color: #E6005A; */
-  border: 3px solid #e6005a;
-  background-color: white;
-  border-radius: 5px;
-}
-
-.dash-right .avisos .div-form button {
-  cursor: pointer;
-  font-family: "Exo 2", sans-serif;
-  border: 0;
-  border-radius: 5px;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 10px 15px;
-  color: white;
-  background-color: #e6005a;
-  width: 120px;
-}
-
-.publicacao-btn-editar {
-  cursor: pointer;
-  font-family: "Exo 2", sans-serif;
-  border: 0;
-  border-radius: 5px;
-  font-weight: 600;
-  font-size: 14px;
-  padding: 5px 8px;
-  color: white;
-  background-color: #e6005a;
-  width: 80px;
-}
-
-.publicacao {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: stretch;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
-  border-bottom: 3px solid #e6005a;
-  padding: 20px;
-}
-
-.publicacao > *:not(:last-child) {
-  padding: 0 0 10px 0;
-}
-
-.div-results {
-  width: 100%;
-}
-
-.div-results .feed-container {
-  background-color: #242124;
-  border-radius: 5px;
-  margin-bottom: 80px;
-}
-
-.div-buttons {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.div-buttons > * {
-  margin-left: 30px;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 /* pagina graficos */
@@ -120,8 +19,10 @@ body {
   top: 0;
   left: 20%;
   background-color: #161618;
-  height: 100vh;
+  height: 100%;
   overflow: auto;
+  display: flex;
+  justify-content: space-between;
 }
 
 .regua {
@@ -130,26 +31,6 @@ body {
   justify-content: center;
   width: 100%;
   margin-top: 30px;
-}
-
-.perigo-frio {
-  background-color: #5c6bc0;
-}
-
-.perigo-quente {
-  background-color: #ff7043;
-}
-
-.alerta-frio {
-  background-color: #42a5f5;
-}
-
-.alerta-quente {
-  background-color: #ffee58;
-}
-
-.ideal {
-  background-color: #9ccc65;
 }
 
 .item-regua {
@@ -160,174 +41,97 @@ body {
   padding-top: 15px;
 }
 
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  height: 450px;
-  width: 100%;
-  align-items: center;
-  color: white;
-}
-
-.card {
-  margin: 2%;
-  width: 40%;
-  flex-wrap: wrap;
-  display: flex;
-  text-align: center;
-  height: 180px;
-  justify-content: right;
-  background-color: #212124;
-  font-size: 20px;
-}
-
-.card p {
-  margin: 0;
-  font-size: 50px;
-  font-weight: lighter;
-  text-align: left;
-}
-
-.cards h1 {
-  font-size: 22px;
-  width: 100%;
-  border-bottom: solid white 1px;
-  text-align: left;
-  font-weight: lighter;
-  margin: 20px;
-}
-
-.temperatura,
-.umidade {
-  margin: 5px;
-  margin-left: 20px;
-  width: 75%;
-}
-
-.cor-alerta {
-  width: 13%;
-  height: 30%;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.btns-dash {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
-  flex-wrap: wrap;
-  padding: 0 30% 0 30%
-}
-
-.graph {
-  width: 80%;
-  margin: auto;
-  padding-top: 10px;
-}
-
-.tituloGraficos {
-  color: rgb(216, 216, 216);
-  display: flex;
-  justify-content: center;
-}
-
-.btn-chart {
-  font-family: "Exo 2", sans-serif;
-  border: 0;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 10px 15px;
-  color: #e6005a;
-  background-color: white;
-  margin: 5px;
-  border-radius: 3px;
-}
-
-.btn-pink {
-  color: white;
-  background-color: #e6005a;
-}
-
-.btn-white {
-  color: #e6005a;
-  background-color: white;
-
-}
-
-.label-captura {
-  height: 80px;
-}
-
-.display-none {
-  display: none;
-}
-
-.display-flex {
-  display: flex;
-}
-
-.display-block {
-  display: block;
-}
-
 canvas {
   width: 100% !important;
   height: 100% !important;
 }
 
-.grafico_linha{
-  width: 1000px;
-  height: 900px;
-  margin-left: 20%;
-  align-items: center;
-}
-
-/*Pagina de sorteio*/
-
-.btn_masculino{
-  background-color: transparent;
-  border: 1px solid #69D1C5;
-  transition: background-color .5s;
-  color: #69D1C5;
-  margin-left: 20%;
-  margin-top: 20px;
-  width: 15%;
-  height: 5%;
-  font-size: 18px;
-}
-
-.btn_feminino{
-  background-color: transparent;
-  border: 1px solid #69D1C5;
-  transition: background-color .5s;
-  color: #69D1C5;
-  margin-left: 20%;
-  margin-top: 20px;
-  width: 15%;
-  height: 5%;
-  font-size: 18px;
-}
-
-.dash-header {
-  background-color: #212124;
-}
-
-.dash {
-  width: 80%;
-  position: relative;
-  top: 0;
-  left: 20%;
-  background-color: #161618;
-  height: 100vh;
-  overflow: auto;
-}
-
-.regua {
+.container-graficos{
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
   width: 100%;
-  margin-top: 30px;
+}
+
+.graficos-lado-a-lado{
+  display: flex;
+  gap: 4%;
+}
+
+.grafico-barras{
+  width: 100%;
+  height: 300px;
+}
+
+.grafico-pizza{
+  width: 90%;
+  height: 100%;
+  margin-top: 40px;
+}
+
+.grafico-barrasVertical{
+  width: 80%;
+  margin-top: 40px;
+}
+
+.grafico-barras,
+.grafico-barrasVertical,
+.grafico-pizza {
+    height: 300px;
+    text-align: left;
+    position: relative;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  margin-top: 0.5%; /* Remove o espaçamento superior do título */
+  white-space: nowrap;
+  text-align: left;
+}
+
+/* Configuração card para o gráfico de Pizza */
+.card-grafico-pizza {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #212124;
+  padding: 30px;
+  border-radius: 10px;
+  width: 38%;
+  height: 400px;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 2%;
+  display: flex;
+  flex-direction: column;
+}
+
+/*Configuração card para o gráfico de Barras*/
+.card {
+  background-color: #212124;
+  padding: 30px;
+  border-radius: 10px;
+  width: 60%; /* cor para borda: #D30C7B */
+  height: 400px;
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-top: 2%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-grafico-barrasVertical{
+  background-color: #212124;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%; /* cor para borda: #D30C7B */
+  height: 350px;
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-top: 2%;
+  display: flex;
+  flex-direction: column;
 }
