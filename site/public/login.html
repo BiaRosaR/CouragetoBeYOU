@@ -1,122 +1,149 @@
 <!DOCTYPE html>
 <html lang="pt">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - CTBY</title>
-    <link rel="stylesheet" href="css/estilo_cadastro_login.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <link rel="icon" style="height: 100%; width: 100%;" href="img/logo.png">
-</head>
+    <link rel="stylesheet" href="css/estilo_cadastro_login.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" style="height: 100%; width: 100%" href="img/logo.png" />
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <div class="conteudo"><!-- Início conteudo -->
-            <div class="first-column">
-                <img class="logo" src="img/logo.png">
-                <!--<h2 class="title title-primary">Seja Bem vindo(a) a Courage to be you!</h2>-->
-                <p class="description description-primary">Se ainda não possui conta cadastrada, realize seu cadastro
-                    antes do login. E
-                    encoraje seu estilo maravilhoso como nosos serviços!</p>
-                <button id="signin" class="btn btn-primary"><a
-                        href="cadastro.html"><b>cadastrar</b></a></button>
-            </div>
-            <div class="second-column"><!-- Início da social media -->
-                <h2 class="title title-second">Efetue seu login:</h2>
-                <div class="social-media"><!-- Início da social media -->
-                    <ul class="list-social-media">
-                        <a class="link-social-media" href="#">
-                            <li class="item-social-media">
-                                <i class="fab fa-facebook-f"></i>
-                            </li>
-                        </a>
-                        <a class="link-social-media" href="#">
-                            <li class="item-social-media">
-                                <i class="fab fa-google-plus-g"></i>
-                            </li>
-                        </a>
-                        <a class="link-social-media" href="#">
-                            <li class="item-social-media">
-                                <i class="fab fa-linkedin-in"></i>
-                            </li>
-                        </a>
-                    </ul>
-                </div><!-- Fim social media -->
-                <p class="description description-second">Utilize o email e senha já cadastrados:</p>
-                <div class="form">
-                    <label class="label-input" for="" style="background-color: transparent; border: 2px solid #69D1C5">
-                        <i class="far fa-envelope icon-modify"></i>
-                        <input id="email_input" type="email" placeholder="Email">
-                    </label>
+      <div class="conteudo">
+        <!-- Início conteudo -->
+        <div class="first-column">
+          <img class="logo" src="img/logo.png" />
+          <!--<h2 class="title title-primary">Seja Bem vindo(a) a Courage to be you!</h2>-->
+          <p class="description description-primary">
+            Se ainda não possui conta cadastrada, realize seu cadastro antes do
+            login. E encoraje seu estilo maravilhoso como nosos serviços!
+          </p>
+          <button id="signin" class="btn btn-primary">
+            <a href="cadastro.html"><b>cadastrar</b></a>
+          </button>
+        </div>
+        <div class="second-column">
+          <!-- Início da social media -->
+          <h2 class="title title-second">Efetue seu login:</h2>
+          <div class="social-media">
+            <!-- Início da social media -->
+            <ul class="list-social-media">
+              <a class="link-social-media" href="#">
+                <li class="item-social-media">
+                  <i class="fab fa-facebook-f"></i>
+                </li>
+              </a>
+              <a class="link-social-media" href="#">
+                <li class="item-social-media">
+                  <i class="fab fa-google-plus-g"></i>
+                </li>
+              </a>
+              <a class="link-social-media" href="#">
+                <li class="item-social-media">
+                  <i class="fab fa-linkedin-in"></i>
+                </li>
+              </a>
+            </ul>
+          </div>
+          <!-- Fim social media -->
+          <p class="description description-second">
+            Utilize o email e senha já cadastrados:
+          </p>
+          <div class="form">
+            <label
+              class="label-input"
+              for=""
+              style="background-color: transparent; border: 2px solid #69d1c5"
+            >
+              <i class="far fa-envelope icon-modify"></i>
+              <input id="email_input" type="email" placeholder="Email" />
+            </label>
 
-                    <label class="label-input" for="" style="background-color: transparent;border: 2px solid #69D1C5">
-                        <i class="fas fa-lock icon-modify"></i>
-                        <input id="senha_input" type="password" placeholder="Password">
-                    </label>
+            <label
+              class="label-input"
+              for=""
+              style="background-color: transparent; border: 2px solid #69d1c5"
+            >
+              <i class="fas fa-lock icon-modify"></i>
+              <input id="senha_input" type="password" placeholder="Password" />
+            </label>
 
-
-                    <button onclick="entrar()" class="btn btn-second"><b>Entrar</b></button>
-                </div>
-            </div><!-- Final second column -->
-        </div><!-- Final first conteudo -->
-    </div><!--Final do container-->
-</body>
-
+            <button onclick="entrar()" class="btn btn-second">
+              <b>Entrar</b>
+            </button>
+          </div>
+        </div>
+        <!-- Final second column -->
+      </div>
+      <!-- Final first conteudo -->
+    </div>
+    <!--Final do container-->
+  </body>
 </html>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-    function entrar() {
-        // aguardar();
+  function entrar() {
+    // aguardar();
 
-        var emailVar = email_input.value;
-        var senhaVar = senha_input.value;
+    var emailVar = email_input.value;
+    var senhaVar = senha_input.value;
 
-        if (emailVar == "" || senhaVar == "") {
-
-            alert("PREENCHA com o seu EMAIL E SENHA cadastrados para realizar o login!");
-            return false;
-        }
-
-        console.log("FORM LOGIN: ", emailVar);
-        console.log("FORM SENHA: ", senhaVar);
-
-        fetch("/usuarios/autenticar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                emailServer: emailVar,
-                senhaServer: senhaVar
-            })
-        }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
-
-
-            if (resposta.ok) {
-                console.log(resposta);
-
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-                    console.log('logou')
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
-
-                });
-
-                window.location = "dashboard/dashboard.html";
-
-            } else {
-                console.log("Houve um ERRO ao tentar realizar o login!");
-            }
-
-        }).catch(function (erro) {
-            console.log('a');
-        })
-
-        return false;
+    if (emailVar == "" || senhaVar == "") {
+      alert(
+        "PREENCHA com o seu EMAIL E SENHA cadastrados para realizar o login!"
+      );
+      return false;
     }
+
+    console.log("FORM LOGIN: ", emailVar);
+    console.log("FORM SENHA: ", senhaVar);
+
+    fetch("/usuarios/autenticar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        emailServer: emailVar,
+        senhaServer: senhaVar,
+      }),
+    })
+      .then(function (resposta) {
+        console.log("ESTOU NO THEN DO entrar()!");
+
+        if (resposta.ok) {
+          console.log(resposta);
+
+          resposta.json().then((json) => {
+            console.log(json);
+            console.log(JSON.stringify(json));
+            console.log("logou");
+            sessionStorage.EMAIL_USUARIO = json.email;
+            sessionStorage.NOME_USUARIO = json.nome;
+            sessionStorage.ID_USUARIO = json.id;
+          });
+
+          window.location = "dashboard/dashboard.html";
+        } else {
+          console.log("Houve um ERRO ao tentar realizar o login!");
+          Swal.fire({
+            icon: "error",
+            title: "ATENÇÃO",
+            text: "Email ou senha informados INCORRETAMENTE!"
+          });
+        }
+      })
+      .catch(function (erro) {
+        console.log("a");
+      });
+
+    return false;
+  }
 </script>

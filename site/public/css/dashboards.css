@@ -69,7 +69,8 @@ canvas {
 }
 
 .grafico-barrasVertical{
-  width: 80%;
+  width: 70%;
+  height: 100%;
   margin-top: 40px;
 }
 
